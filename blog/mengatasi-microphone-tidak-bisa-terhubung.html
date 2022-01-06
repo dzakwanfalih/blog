@@ -6,21 +6,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Intercepting HTTP requests and responses</title>
-  <meta name='description' content='Intercepting HTTP traffic is the foundation of manual testing using Burp Suite. In this tutorial, you'll learn how to intercept HTTP requests and responses u...'>
+  <title>Mengatasi microphone tidak bisa terhubung</title>
+  <meta name='description' content='Berberapa kasus, micrphone pada headset bluetooth anda tidak dapat berfungsi, tulisan ini mencoba membantu anda untuk mentasi masalah tersebut. '>
 
-  <link rel="canonical" href="/blog/test">
+  <link rel="canonical" href="/blog/mengatasi-microphone-tidak-bisa-terhubung">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Intercepting HTTP requests and responses – supernodex">
-  <meta name="twitter:description" content="Intercepting HTTP traffic is the foundation of manual testing using Burp Suite. In this tutorial, you'll learn how to intercept HTTP requests and responses using Burp Proxy and Burp Suite's embedded browser. We'll also show you how to configure Burp Proxy so that you intercept the traffic you are most interested in. ">
-  <meta name="twitter:image:src" content="/uploads/post-13.png">
+  <meta name="twitter:title" content="Mengatasi microphone tidak bisa terhubung – supernodex">
+  <meta name="twitter:description" content="Berberapa kasus, micrphone pada headset bluetooth anda tidak dapat berfungsi, tulisan ini mencoba membantu anda untuk mentasi masalah tersebut. ">
+  <meta name="twitter:image:src" content="">
 
   <!-- Facebook OpenGraph -->
-  <meta property="og:title" content="Intercepting HTTP requests and responses – supernodex">
-  <meta property="og:description" content="Intercepting HTTP traffic is the foundation of manual testing using Burp Suite. In this tutorial, you'll learn how to intercept HTTP requests and responses using Burp Proxy and Burp Suite's embedded browser. We'll also show you how to configure Burp Proxy so that you intercept the traffic you are most interested in. ">
-  <meta property="og:image" content="/uploads/post-13.png">
+  <meta property="og:title" content="Mengatasi microphone tidak bisa terhubung – supernodex">
+  <meta property="og:description" content="Berberapa kasus, micrphone pada headset bluetooth anda tidak dapat berfungsi, tulisan ini mencoba membantu anda untuk mentasi masalah tersebut. ">
+  <meta property="og:image" content="">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
@@ -139,12 +139,6 @@
     <div class="row">
 
       
-      <div class="col col-6 col-d-12">
-        <div class="post-image">
-          <img loading="lazy" src="/uploads/post-13.png" alt="Intercepting HTTP requests and responses" />
-        </div>
-      </div>
-      
 
       <div class="col col-6 col-d-12">
         <div class="post__info">
@@ -152,13 +146,13 @@
           
           <div class="post-tags">
             
-              <a href="/tag/web hacking" class="post-tags__tag">web hacking</a>
+              <a href="/tag/{ngoprek santai}" class="post-tags__tag">{ngoprek santai}</a>
             
           </div>
           
 
 
-          <h1 class="post__title">Intercepting HTTP requests and responses</h1>
+          <h1 class="post__title">Mengatasi microphone tidak bisa terhubung</h1>
 
           <div class="post__meta">
             <div class="post__author-image">
@@ -167,7 +161,7 @@
 
             <div class="post__meta-bottom">
               <div class="post__author">Dzakwan Falih</div>
-              <time class="post__date" datetime="2022-01-04T03:47:00+00:00">04 Jan 2022</time>
+              <time class="post__date" datetime="2022-01-06T07:28:00+00:00">06 Jan 2022</time>
             </div>
           </div>
 
@@ -183,9 +177,47 @@
   <article class="post">
 
     <div class="post__content" data-cms-content-wrapper="/site/_layouts/post.html">
-      <p>Salah satu dasar dari teknik hacking pada kemanan website adalah mengetahui post dan request pada aplikasi. Tulisan ini menjelaskan kepada anda untuk mengetahui alur dari proxy. Tujuan dari intercept pada protocol http adalah mengetahui apakah ada request dan post secara normal.</p>
+      <p>Di postingan ini, saya akan menjelaskan bagaimana cara mengaktifkan mikrofon pada sistem operasi ubuntu, khususnya pengguna headset bluetooth.</p>
+
+<p>oke sebelumnya, saya menggunakan headset merek mpow m5, dimana headset tersebut menggunakan koneksi bluetooth, namun saat saya mencoba microphone, pada settingan di ubuntu sama sekali tidak terbaca. ada berberapa headset yang inbuild support, ada yang tidak.</p>
+
+<p>Saat kamu menghubungkan headseat bluetooth ke laptop kamu, khususnya pada sistem operasi ubuntu, mic tidak secara otomatis terdeteksi.</p>
+
+<p>setelah saya googling an mengutak atik konfigurasi, saya menemukan masalah yang sangat umum di linux ubuntu dan pulseaudio yang harus disalahkan. biasa agar microphone  dapat berfungsi, kita memerluikan HSP (Handset Profile) / HFP (Hands-FreeProfile) pada sistem operasi pada umumnya telah disediakan, sedangkan pada sistem pulseaudio tidak tersedia secara default. agar pulse audio dapat mendukung HSP.</p>
+
+<p>yang anda perlu lakukan yaitu menginstall driver tambahan, agar mic pada headset bluetooht  dapat bekerja. salah satu caranya dengan cara menginstall pipewire.</p>
+
+<p>pipewire adalah sebuah aplikasi opensource aplikasi ini bertujuan untuk meningkatkan penanganan audio dan video di LInux. ada opsi lain juga selain dari pipewire, yaitu menggunakan oFONO. Bagi saya oFono terlalu ribet untuk di konfigurasi, jadi saya memilih pipewire.</p>
+
+<h1 id="mengaktifkan-headseat-bluetooth-microphone">Mengaktifkan headseat bluetooth microphone.</h1>
 
 <p> </p>
+
+<p>sebelum memasang aplikasi pipewire,  tolong pastikan masalah kalian sama dengan saya.</p>
+
+<p>buka terminal, ketikan perintah ini pada terminal</p>
+
+<p> </p>
+
+<p>perhatikan audio sink untuk memastikan headset terdeteksi. ketikan perintah quit untuk keluar dari bluetoothctl.</p>
+
+<h2 id="installing-pipewire-in-ubuntu-2004">Installing Pipewire in ubuntu 20.04</h2>
+
+<p>untuk memasang aplikasi pipewire, anda butuh menambahkan repository. Ketikan perintah sesuai perintah dibawah ini.</p>
+
+<p> </p>
+
+<p>setelah itu, lakukan pemberuan update pada service.</p>
+
+<p> </p>
+
+<p>jika terdapat masalah, lakukan restart service pipewire atau reboot sistem anda.</p>
+
+<p> </p>
+
+<p>Jika telah selesai. check kembali pengaturan audio anda. “Boom”</p>
+
+<p>masalah microphone anda telah selesai.</p>
 
 <p> </p>
 
@@ -198,25 +230,25 @@
   <ul class="share__list list-reset">
     <li class="share__item">
       <a class="share__link share__twitter"
-        href="https://twitter.com/intent/tweet?text=Intercepting%20HTTP%20requests%20and%20responses&url=/blog/test"
+        href="https://twitter.com/intent/tweet?text=Mengatasi%20microphone%20tidak%20bisa%20terhubung&url=/blog/mengatasi-microphone-tidak-bisa-terhubung"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__facebook"
-        href="https://www.facebook.com/sharer/sharer.php?u=/blog/test"
+        href="https://www.facebook.com/sharer/sharer.php?u=/blog/mengatasi-microphone-tidak-bisa-terhubung"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Facebook" rel="nofollow"><i class="ion ion-logo-facebook"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__pinterest"
-        href="http://pinterest.com/pin/create/button/?url=/blog/test&amp;media=/uploads/post-13.png&amp;description=Intercepting%20HTTP%20requests%20and%20responses"
+        href="http://pinterest.com/pin/create/button/?url=/blog/mengatasi-microphone-tidak-bisa-terhubung&amp;media=&amp;description=Mengatasi%20microphone%20tidak%20bisa%20terhubung"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on Pinterest" rel="nofollow"><i class="ion ion-logo-pinterest"></i></a>
     </li>
     <li class="share__item">
       <a class="share__link share__linkedin"
-        href="https://www.linkedin.com/shareArticle?mini=true&url=/blog/test&title=Intercepting%20HTTP%20requests%20and%20responses&summary=Intercepting%20HTTP%20traffic%20is%20the%20foundation%20of%20manual%20testing%20using%20Burp%20Suite.%20In%20this%20tutorial,%20you'll%20learn%20how%20to%20intercept%20HTTP%20requests%20and%20responses%20using%20Burp%20Proxy%20and%20Burp%20Suite's%20embedded%20browser.%20We'll%20also%20show%20you%20how%20to%20configure%20Burp%20Proxy%20so%20that%20you%20intercept%20the%20traffic%20you%20are%20most%20interested%20in.%20&source=Vonge"
+        href="https://www.linkedin.com/shareArticle?mini=true&url=/blog/mengatasi-microphone-tidak-bisa-terhubung&title=Mengatasi%20microphone%20tidak%20bisa%20terhubung&summary=Berberapa%20kasus,%20micrphone%20pada%20headset%20bluetooth%20anda%20tidak%20dapat%20berfungsi,%20tulisan%20ini%20mencoba%20membantu%20anda%20untuk%20mentasi%20masalah%20tersebut.%20&source=Vonge"
         onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
     </li>
@@ -232,17 +264,17 @@
     <div class="col col-10 col-d-12 push-d-0 push-1">
       <div class="post__navigation animate">
   
-
-  
-  <a class="post__next" href="/blog/mengatasi-microphone-tidak-bisa-terhubung">
-    <div class="next__box">
-      <span class="post__nav post__nav__next">Next post</span>
-      <h2 class="post__nav__title">Mengatasi microphone tidak bisa terhubung</h2>
+  <a class="post__prev" href="/blog/test">
+    <div class="prev__image">
+      <img loading="lazy" src="/uploads/post-13.png" alt="Mengatasi microphone tidak bisa terhubung">
     </div>
-    <div class="next__image">
-      <img loading="lazy" src="" alt="Intercepting HTTP requests and responses">
+    <div class="prev__box">
+      <span class="post__nav post__nav__prev">Prev post</span>
+      <h2 class="post__nav__title">Intercepting HTTP requests and responses</h2>
     </div>
   </a>
+  
+
   
 </div>
     </div>
@@ -268,7 +300,7 @@
                 
                 
                   
-                    <a href="/tags#web hacking" class="section__link related-tag">See all<span> web hacking</span> <i class="ion ion-md-arrow-forward"></i></a>
+                    <a href="/tags#{ngoprek santai}" class="section__link related-tag">See all<span> {ngoprek santai}</span> <i class="ion ion-md-arrow-forward"></i></a>
                   
                 
               
